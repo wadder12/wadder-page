@@ -21,13 +21,16 @@ const Navbar = () => {
       </div>
       <ul className={`navbar-menu ${menuOpen ? 'open' : ''}`}>
         <li className="navbar-item">
-          <a href="#faq" className="navbar-link">FAQ</a>
+        <a href="https://github.com/wadder12/wadder-page/wiki/FAQ" className="navbar-link" target="_blank" rel="noopener noreferrer">FAQ</a>
         </li>
         <li className="navbar-item">
-          <a href="#wiki" className="navbar-link">Wiki</a>
+        <a href="https://github.com/wadder12/wadder-page/wiki" className="navbar-link" target="_blank" rel="noopener noreferrer">Wiki</a>
         </li>
         <li className="navbar-item">
-          <a href="#contact" className="navbar-link">Contact</a>
+        <a href="https://github.com/wadder12/wadder-page/wiki/Changelog-For-Wadder" className="navbar-link" target="_blank" rel="noopener noreferrer">Changelog</a>
+        </li>
+        <li className="navbar-item">
+        <a href="https://discord.gg/A9gxnwgpEN" className="navbar-link" target="_blank" rel="noopener noreferrer">Contact</a>
         </li>
       </ul>
     </nav>

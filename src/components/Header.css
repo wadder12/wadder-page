@@ -1,10 +1,11 @@
+/* Header styles */
 .header {
-  background-color: #333;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: linear-gradient(45deg, #ff6e7f, #bfe9ff);
 }
 
 .wave-container {
@@ -14,6 +15,7 @@
   width: 100%;
   height: 100%;
   z-index: -1;
+  overflow: hidden;
 }
 
 .wave {
@@ -23,22 +25,24 @@
   width: 100%;
   height: 100%;
   opacity: 0.8;
+  transform: translateY(50%);
+  animation: wave 10s linear infinite;
 }
 
-.wave-color-1 {
-  fill: #f00;
-}
-
-.wave-color-2 {
-  fill: #0f0;
-}
-
-.wave-color-3 {
-  fill: #00f;
+@keyframes wave {
+  0% {
+    transform: translateY(50%) translateX(0%);
+  }
+  100% {
+    transform: translateY(50%) translateX(-100%);
+  }
 }
 
 .header-content {
   text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .header-title {
@@ -48,7 +52,20 @@
   margin: 0;
   padding: 0;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  animation: fadeIn 2s ease-in-out;
+  transform-style: preserve-3d;
+  animation: rotate 5s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  50% {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
 }
 
 .header-subtitle {
@@ -56,8 +73,20 @@
   color: #fff;
   margin: 20px 0;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 1s ease-in-out 0.5s;
+  transform-style: preserve-3d;
+  animation: scale 5s infinite linear;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(2, 2, 2);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 .header-description {
@@ -66,8 +95,7 @@
   margin: 20px 0;
   max-width: 800px;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 1s ease-in-out 1s;
+  animation: fadeIn 2s ease-in-out 2s;
 }
 
 .header-cta {
@@ -80,24 +108,12 @@
   margin-top: 20px;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  opacity: 1;
-  transition: opacity 1s ease-in-out 1.5s;
+  transition: background-color 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  animation: move 
 }
-
 .header-cta:hover {
   background-color: #eee;
-}
-
-/* Animation keyframes */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Responsive styles */
@@ -120,4 +136,5 @@
     padding: 10px 15px;
   }
 }
+
 
